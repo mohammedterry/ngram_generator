@@ -65,16 +65,7 @@ def find_bigrams(first_word,bigrams):
 #print(results5)
 
 
-#6) choose randomly from a list of tuples, and return the last word of that tuple 
-
-def choose_bigram(bigrams):
-    from random import choice
-    return choice(bigrams)
-
-#results6 = choose_bigram(results5)
-#print(results6)
-
-#7) take the last word from a bigram
+#6) take the last word from a bigram
 #   if the bigram is empty, return fullstop
     
 def last_word(bigram):
@@ -83,22 +74,24 @@ def last_word(bigram):
     except:
         return '.'
 
-#results7 = last_word(results6)
-#print(results7)
+#results6 = last_word(('a','test'))
+#print(results6,'=','test')
 
-#FINAL PROJECT) generate sentences using bigrams 
+#7) generate sentences using bigrams 
 # bonus: can you modify it from a bigram to a trigram model?
 
 def generate_sentence(word, seq_len = 10):
+    from random import choice
     generated = word
     raw_text = load_data()
     text = clean_text(raw_text)
     bigrams = count_bigrams(text)
     for _ in range(seq_len):
         candidate_grams = find_bigrams(word,bigrams)
-        chosen_gram = choose_bigram(candidate_grams)
+        chosen_gram = choice(candidate_grams)
         word = last_word(chosen_gram)
         generated += ' ' + word 
     return generated
 
-print(generate_sentence('i'))
+#results7 = generate_sentence('i')
+#print(results7)
