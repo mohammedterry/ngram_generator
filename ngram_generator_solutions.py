@@ -47,14 +47,9 @@ results4 = find_bigrams('test',set(results3))
 print(results4)
 
 
-#5) get only the last word from a bigram
-#   if the bigram is empty, return fullstop
-    
+#5) get only the last word from a bigram    
 def last_word(bigram):
-    if len(bigram) > 0:
-        return bigram[-1]
-    else:
-        return '.'
+    return bigram[-1]
 
 results5 = last_word(('a','test'))
 print(results5,'=','test')
