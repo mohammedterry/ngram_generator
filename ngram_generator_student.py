@@ -38,6 +38,16 @@ def find_bigrams(first_word,bigrams):
 # generate sentences by connecting random bigrams together
 
 def generate_sentence(word, seq_len = 15):
+    #store the generated string in a variable called "generated"
+    #load in the raw text using your load_data() function
+    #clean the raw text using your clean_text() function
+    #turn the cleaned text into bigrams using your get_bigrams() function
+    # create a loop that repeats for seq_len times, so that the generated string has seq_len words in it
+        # use the find_bigrams() function to get only the bigrams that match the word stored in the variable "word"
+        # choose a random word from those bigrams using the random.choice() function
+        # add this word to the string of generated text
+        # repeat using this word to find the next bigrams 
+    # return the generated string
     pass
 #results5 = generate_sentence('i')
 #print(results5)
